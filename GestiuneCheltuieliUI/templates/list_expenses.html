@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Listează Cheltuieli</title>
+</head>
+<body>
+    <h1>Listează Cheltuieli</h1>
+    {% if expenses %}
+        <h2>Cheltuieli:</h2>
+        <ul>
+        {% for expense in expenses %}
+
+            <li>ID: {{ expense.id }}, Tip: {{ expense.tip }}, Nume: {{ expense.numeCheltuiala }}, Cost: {{ expense.cost }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    <a href="{{ url_for('index') }}">Înapoi</a>
+</body>
+</html>

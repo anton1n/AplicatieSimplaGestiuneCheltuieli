@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Gestiune Cheltuieli</title>
+</head>
+<body>
+    <h1>Interfață UI pentru Aplicatie de Gestiune a Cheltuielilor (Kotlin Server)</h1>
+    <ul>
+        <li><a href="{{ url_for('register') }}">Înregistrare</a></li>
+        <li><a href="{{ url_for('login') }}">Autentificare</a></li>
+        <li><a href="{{ url_for('get_budget') }}">Obține Buget</a></li>
+        <li><a href="{{ url_for('add_budget') }}">Adaugă Buget</a></li>
+        <li><a href="{{ url_for('add_expense') }}">Adaugă Cheltuială</a></li>
+        <li><a href="{{ url_for('list_expenses') }}">Listează Cheltuieli</a></li>
+        <li><a href="{{ url_for('update_expense') }}">Actualizează Cheltuială</a></li>
+        <li><a href="{{ url_for('delete_expense') }}">Șterge Cheltuială</a></li>
+    </ul>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul style="color:red;">
+          {% for msg in messages %}
+            <li>{{ msg }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Obține Buget</title>
+</head>
+<body>
+    <h1>Obține Bugetul Meu</h1>
+    <form method="post" action="{{ url_for('get_budget') }}">
+        <button type="submit">Obține Bugetul Meu</button>
+    </form>
+    <a href="{{ url_for('index') }}">Înapoi</a>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Autentificare</title>
+</head>
+<body>
+    <h1>Autentificare Cont</h1>
+    <form method="post" action="{{ url_for('login') }}">
+        <label>Username:</label>
+        <input type="text" name="username" required/><br/>
+        <label>Parola:</label>
+        <input type="password" name="password" required/><br/>
+        <button type="submit">Autentifică-te</button>
+    </form>
+    <a href="{{ url_for('index') }}">Înapoi</a>
+</body>
+</html>

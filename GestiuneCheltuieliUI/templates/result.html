@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Rezultat</title>
+</head>
+<body>
+    <h1>Rezultat</h1>
+    <pre>{{ result | tojson(indent=2) }}</pre>
+    {% if expenses %}
+        <h2>Cheltuieli:</h2>
+        <ul>
+        {% for expense in expenses %}
+
+            <li>ID: {{ expense.id }}, Tip: {{ expense.tip }}, Nume: {{ expense.numeCheltuiala }}, Cost: {{ expense.cost }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    <a href="{{ url_for('index') }}">Înapoi</a>
+</body>
+</html>
