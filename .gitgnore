@@ -1,0 +1,27 @@
+# ========================
+# IntelliJ IDEA / PyCharm
+# ========================
+.idea/
+*.iml
+
+# ========================
+# Maven-specific artifacts
+# ========================
+target/
+
+# ========================
+# Python-specific ignores
+# ========================
+venv/
+ENV/
+env/
+.venv/
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+.env
+.env.*
+
+
