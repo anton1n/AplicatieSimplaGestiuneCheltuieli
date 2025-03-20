@@ -3,18 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Adauga Cheltuieli</title>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
 </head>
 <body>
-    <h1>Adauga cheltuieli</h1>
-    <form method="post" action="{{ url_for('add_expense') }}">
-        <label>Tip (INTRETINERE, MANCARE, DISTRACTIE, SCOALA, PERSONALE):</label>
-        <input type="text" name="tip" required/><br/>
-        <label>Nume Cheltuiala:</label>
-        <input type="text" name="numeCheltuiala" required/><br/>
-        <label>cost:</label>
-        <input type="number" name="cost" required/><br/>
-        <button type="submit">Adauga</button>
-    </form>
-    <a href="{{ url_for('index') }}">Înapoi</a>
+    <header>
+        <h1>Adauga cheltuieli</h1>
+        <div class="reg-login">
+            <a href="{{ url_for('register') }}">Înregistrare</a>
+            <a href="{{ url_for('login') }}">Autentificare</a>
+        </div>
+    </header>
+    <nav>
+        <a href="{{ url_for('get_budget') }}">Obține Buget</a>
+        <a href="{{ url_for('add_budget') }}">Adaugă Buget</a>
+        <a href="{{ url_for('add_expense') }}">Adaugă Cheltuială</a>
+        <a href="{{ url_for('list_expenses') }}">Listează Cheltuieli</a>
+        <a href="{{ url_for('update_expense') }}">Actualizează Cheltuială</a>
+        <a href="{{ url_for('delete_expense') }}">Șterge Cheltuială</a>
+    </nav>
+    <main>
+        <form method="post" action="{{ url_for('add_expense') }}">
+            <label>Tip :</label>
+<!--            <input type="text" name="tip" required/><br/>-->
+            <select id="tip" name="tip" required>
+                <option value="INTRETINERE">INTRETINERE</option>
+                <option value="MANCARE">MANCARE</option>
+                <option value="DISTRACTIE">DISTRACTIE</option>
+                <option value="SCOALA">SCOALA</option>
+                <option value="PERSONALE">PERSONALE</option>
+            </select><br>
+            <label>Nume Cheltuiala:</label>
+            <input type="text" name="numeCheltuiala" required/><br/>
+            <label>Cost:</label>
+            <input type="number" name="cost" required/><br/>
+            <button type="submit">Adauga</button>
+        </form>
+        <a href="{{ url_for('index') }}">Înapoi</a>
+    </main>
+    <footer>
+        <hr/>
+        <p>&copy; 2025</p>
+    </footer>
 </body>
 </html>

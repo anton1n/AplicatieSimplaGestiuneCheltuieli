@@ -3,18 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Înregistrare</title>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
 </head>
 <body>
-    <h1>Înregistrare Cont</h1>
-    <form method="post" action="{{ url_for('register') }}">
-        <label>Username:</label>
-        <input type="text" name="username" required/><br/>
-        <label>Parola:</label>
-        <input type="password" name="password" required/><br/>
-        <label>Buget:</label>
-        <input type="number" name="budget" required/><br/>
-        <button type="submit">Înregistrează-te</button>
-    </form>
-    <a href="{{ url_for('index') }}">Înapoi</a>
+    <header>
+        <h1>Inregistrare</h1>
+        <div class="reg-login">
+            <a href="{{ url_for('register') }}">Înregistrare</a>
+            <a href="{{ url_for('login') }}">Autentificare</a>
+        </div>
+    </header>
+    <nav>
+        <a href="{{ url_for('get_budget') }}">Obține Buget</a>
+        <a href="{{ url_for('add_budget') }}">Adaugă Buget</a>
+        <a href="{{ url_for('add_expense') }}">Adaugă Cheltuială</a>
+        <a href="{{ url_for('list_expenses') }}">Listează Cheltuieli</a>
+        <a href="{{ url_for('update_expense') }}">Actualizează Cheltuială</a>
+        <a href="{{ url_for('delete_expense') }}">Șterge Cheltuială</a>
+    </nav>
+    <main>
+        <form method="post" action="{{ url_for('register') }}">
+            <label>Username:</label>
+            <input type="text" name="username" required/><br/>
+            <label>Parola:</label>
+            <input type="password" name="password" required/><br/>
+            <label>Buget:</label>
+            <input type="number" name="budget" required/><br/>
+            <button type="submit">Înregistrează-te</button>
+        </form>
+        <a href="{{ url_for('index') }}">Înapoi</a>
+    </main>
+    <footer>
+        <hr/>
+        <p>&copy; 2025</p>
+    </footer>
 </body>
 </html>

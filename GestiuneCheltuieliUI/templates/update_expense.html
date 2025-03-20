@@ -3,20 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <title>Actualizare Cheltuieli</title>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
 </head>
 <body>
-    <h1>Actualizare cheltuieli</h1>
-    <form method="post" action="{{ url_for('update_expense') }}">
-        <label>Id chltuiala:</label>
-        <input type="text" name="expense_id" required/><br/>
-        <label>Noul nume:</label>
-        <input type="text" name="numeCheltuiala" required/><br/>
-        <label>Noul tip:</label>
-        <input type="text" name="tip" required/><br/>
-        <label>Noul cost:</label>
-        <input type="number" name="cost" required/><br/>
-        <button type="submit">Actualizeaza</button>
-    </form>
-    <a href="{{ url_for('index') }}">Înapoi</a>
+    <header>
+        <h1>Actualizare Cheltuieli</h1>
+        <div class="reg-login">
+            <a href="{{ url_for('register') }}">Înregistrare</a>
+            <a href="{{ url_for('login') }}">Autentificare</a>
+        </div>
+    </header>
+    <nav>
+        <a href="{{ url_for('get_budget') }}">Obține Buget</a>
+        <a href="{{ url_for('add_budget') }}">Adaugă Buget</a>
+        <a href="{{ url_for('add_expense') }}">Adaugă Cheltuială</a>
+        <a href="{{ url_for('list_expenses') }}">Listează Cheltuieli</a>
+        <a href="{{ url_for('update_expense') }}">Actualizează Cheltuială</a>
+        <a href="{{ url_for('delete_expense') }}">Șterge Cheltuială</a>
+    </nav>
+    <main>
+        <form method="post" action="{{ url_for('update_expense') }}">
+            <label>Id chltuiala:</label>
+            <input type="text" name="expense_id" required/><br/>
+            <label>Noul nume:</label>
+            <input type="text" name="numeCheltuiala" required/><br/>
+            <label>Noul tip:</label>
+<!--            <input type="text" name="tip" required/><br/>-->
+            <select id="tip" name="tip">
+                <option value="INTRETINERE">INTRETINERE</option>
+                <option value="MANCARE">MANCARE</option>
+                <option value="DISTRACTIE">DISTRACTIE</option>
+                <option value="SCOALA">SCOALA</option>
+                <option value="PERSONALE">PERSONALE</option>
+            </select><br>
+            <label>Noul cost:</label>
+            <input type="number" name="cost" required/><br/>
+            <button type="submit">Actualizeaza</button>
+        </form>
+        <a class ="getBack" href="{{ url_for('index') }}">Înapoi</a>
+    </main>
+    <footer>
+        <hr/>
+        <p>&copy; 2025</p>
+    </footer>
 </body>
 </html>
